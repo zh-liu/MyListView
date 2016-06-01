@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:fitsSystemWindows="true"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+    >
+    <text.com.mylistview.customviews.TitleBar_
+        android:id="@+id/msi_titlebar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        />
+    <text.com.mylistview.customviews.NineFrameLayout
+        android:id="@+id/msi_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:foregroundGravity="fill_horizontal|top"
+        />
+</LinearLayout>
