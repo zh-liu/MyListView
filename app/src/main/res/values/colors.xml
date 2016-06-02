@@ -6,4 +6,9 @@
     <color name='primary'>#77d2c5</color>
     <color name="white">#FFFFFF</color>
     <color name="msc_title_bar_text_alpha">#88ffffff</color>
+    <color name="qa_color_9bce2d">#9bce2d</color>qa_color_9c9c9c
+    <color name="qa_color_9c9c9c">#9c9c9c</color>
+    <color name="tab_unselect_text_color">#929292</color>
+    <color name="tab_select_text_color">#77d2c5</color>
+    <color name="divide_color">#dddddd</color>
 </resources>
