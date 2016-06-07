@@ -64,7 +64,7 @@ public class BaseTitleBarFragment extends BaseFragment {
             if(viewFeature == ViewFeature.NORMAL){
                 contentContainer = (ViewGroup)view.findViewById(R.id.linear_container);
                 titleBar = (TitleBar)view.findViewById(R.id.linear_title_bar);
-                index = 0;
+                index = 1;
             }else if(viewFeature == ViewFeature.OVERLAY){
                 contentContainer = (ViewGroup)view.findViewById(R.id.frame_container);
                 titleBar = (TitleBar)view.findViewById(R.id.frame_title_bar);
@@ -164,4 +164,6 @@ public class BaseTitleBarFragment extends BaseFragment {
     protected TitleBar getTitleBar(){
         return this.titleBar;
     }
+
+
 }

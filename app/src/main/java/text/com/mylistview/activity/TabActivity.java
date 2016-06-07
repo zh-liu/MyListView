@@ -33,6 +33,8 @@ public class TabActivity extends  BaseActivity {
   //  @StringRes
     String tab_widget_string_me="我";
 
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,14 +44,14 @@ public class TabActivity extends  BaseActivity {
 
     }
 
-
-
-
     @Override
     protected void initTitleBar(TitleBar titleBar) {
         super.initTitleBar(titleBar);
-        titleBar.setTitleName("分页Tab");
+        mTitleBar.setVisibility(View.GONE);
     }
+
+
+
     @AfterViews void afterViews(){
          mTabHost.setup(this,getSupportFragmentManager(),R.id.realtabcontent);
         mTabHost.addTab(mTabHost.newTabSpec(tab_widget_string_job).setIndicator(btnJob), TabJobFragment_.class, null);

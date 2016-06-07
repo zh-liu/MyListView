@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 
 import org.androidannotations.annotations.EFragment;
 
+import ru.noties.scrollable.ScrollableLayout;
+import ru.noties.scrollable.ScrollableScroller;
 import text.com.mylistview.R;
 import text.com.mylistview.customviews.TitleBar;
 
@@ -15,9 +17,12 @@ import text.com.mylistview.customviews.TitleBar;
  */
 @EFragment(R.layout.tab_me_fragment)
 public class TabMeFragment extends BaseTitleBarFragment {
+
+    ScrollableLayout scrollableLayout;
     @Override
     protected void initTitleBar(TitleBar titleBar) {
         super.initTitleBar(titleBar);
+        titleBar.setMode(TitleBar.MODE_TITLE_NAME);
         titleBar.setTitleName("我");
     }
     @Override

@@ -31,6 +31,7 @@ public class ListDataService {
 
     //写死数据，数据可以通过此方法传进来适配 getDataList(T t)
     public List<SimpleItemEntity> getDataList() {
+
         List<SimpleItemEntity> list = new ArrayList<SimpleItemEntity>();
 
         for (int i = 0; i < 20; i++) {
@@ -40,6 +41,7 @@ public class ListDataService {
 
             if (i % 2 == 0) {
                 bean.setName("itemA");
+                bean.setUrl("http://img3.imgtn.bdimg.com/it/u=3792053102,705794561&fm=21&gp=0.jpg");
                 entity.setContent(bean);
                 entity.setModelView(MyItemViewA_.class);
             } else if (i % 3 == 0) {

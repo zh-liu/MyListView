@@ -18,7 +18,8 @@ public class TabChatFragment extends BaseTitleBarFragment {
     @Override
     protected void initTitleBar(TitleBar titleBar) {
         super.initTitleBar(titleBar);
-        titleBar.setTitleName("消息");
+        getTitleBar().setMode(TitleBar.MODE_TITLE_NAME);
+        getTitleBar().setTitleName("消息");
     }
 
     @Override

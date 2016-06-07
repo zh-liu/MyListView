@@ -23,7 +23,7 @@ import text.com.mylistview.customviews.TitleBar;
  */
 @EActivity(R.layout.msi_screen_wrapper)
 public class BaseActivity extends FragmentActivity implements TitleBar.OnActionChangedListener{
-    protected  TitleBar mTitleBar;
+    public  TitleBar mTitleBar;
     protected  ViewGroup mDecor;
     protected ViewGroup  mContentParent;
     private void initTitleBar(View view){
@@ -33,6 +33,18 @@ public class BaseActivity extends FragmentActivity implements TitleBar.OnActionC
     protected void initTitleBar(TitleBar titleBar){
         mTitleBar = titleBar;
         titleBar.setOnActionChangedListener(this);
+    }
+
+    protected  final void initTitleBar(){
+        if(mDecor!=null){
+            initTitleBar(mDecor);
+        }
+    }
+
+
+
+    public TitleBar getmTitleBar(){
+        return mTitleBar;
     }
 
     @Override
@@ -72,23 +84,26 @@ public class BaseActivity extends FragmentActivity implements TitleBar.OnActionC
         if(mDecor==null){
             mDecor =(ViewGroup) getWindow().getDecorView().findViewById(android.R.id.content);
         }
-        List<View> views = null;
-        if (mDecor.getChildCount() > 0) {
-            views = new ArrayList<View>(1); // Usually there's only one
-            // child
-            for (int i = 0, children = mDecor.getChildCount(); i < children; i++) {
-                View child = mDecor.getChildAt(0);
-                mDecor.removeView(child);
-                views.add(child);
+
+        if(mContentParent ==null){
+            List<View> views = null;
+            if (mDecor.getChildCount() > 0) {
+                views = new ArrayList<View>(1); // Usually there's only one
+                // child
+                for (int i = 0, children = mDecor.getChildCount(); i < children; i++) {
+                    View child = mDecor.getChildAt(0);
+                    mDecor.removeView(child);
+                    views.add(child);
+                }
             }
-        }
 
-        mContentParent = generateLayout();
+            mContentParent = generateLayout();
 
-        // Copy over the old children. See above for explanation.
-        if (views != null) {
-            for (View child : views) {
-                mContentParent.addView(child);
+            // Copy over the old children. See above for explanation.
+            if (views != null) {
+                for (View child : views) {
+                    mContentParent.addView(child);
+                }
             }
         }
     }

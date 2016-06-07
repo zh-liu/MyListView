@@ -3,8 +3,10 @@ package text.com.mylistview.activity;
 import android.widget.Toast;
 
 import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.Extra;
 
 import text.com.mylistview.R;
+import text.com.mylistview.bean.ListItemBean;
 import text.com.mylistview.customviews.TitleBar;
 
 /**
@@ -12,11 +14,15 @@ import text.com.mylistview.customviews.TitleBar;
  */
 @EActivity(R.layout.activity_title)
 public class MyTitleActivity extends  BaseActivity {
+
+    @Extra
+    ListItemBean myBean;
+
     @Override
     protected void initTitleBar(TitleBar titleBar) {
         super.initTitleBar(titleBar);
         titleBar.setMode(TitleBar.MODE_ALL);
-        titleBar.setTitleName("Title");
+        titleBar.setTitleName(myBean.getName());
 
        // titleBar.setLeftActionImage(R.drawable.com_bt_ttb_back);
 
@@ -33,9 +39,9 @@ public class MyTitleActivity extends  BaseActivity {
     public void onRightActionChanged() {
         Toast.makeText(this,"进入",Toast.LENGTH_SHORT).show();
     }
-
-    @Override
-    public void onLeftActionChanged() {
-        Toast.makeText(this,"返回",Toast.LENGTH_SHORT).show();
-    }
+//
+//    @Override
+//    public void onLeftActionChanged() {
+//
+//    }
 }
