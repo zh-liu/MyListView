@@ -37,9 +37,9 @@ public class BaseActivity extends FragmentActivity implements TitleBar.OnActionC
 
     protected  final void initTitleBar(){
         if(mDecor!=null){
-            initTitleBar(mDecor);
-        }
+        initTitleBar(mDecor);
     }
+}
 
 
 

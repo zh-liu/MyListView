@@ -3,7 +3,7 @@ package text.com.mylistview.imageload;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
 
-import org.androidannotations.annotations.Bean;
+
 import org.androidannotations.annotations.EBean;
 
 import org.androidannotations.annotations.EBean.Scope;
